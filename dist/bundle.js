@@ -1,16 +1,1 @@
-(function () {
-  'use strict';
-
-  function cube (x) {
-    var cube = x * x;
-    return "Cube of " + x + ": " + cube;
-  };
-
-  function name(name) {
-    return "Your name is " + name;
-  };
-
-  console.log(cube(3));
-  console.log(name('Usman'));
-
-}());
+!function(){"use strict";function n(){if(u<h){var n=$(s[u]);n.addClass("show"),$(w[u]).addClass("hidden");$(window).scrollTop();$(".scroll-to-learn").addClass("hidden"),$("body").animate({scrollTop:n.offset().top-30}),setTimeout(function(){e(),u===h-1&&$(window).off("mousewheel",a),u++},1e3)}}function e(){u!=h-1&&setTimeout(function(){$(w[u]).removeClass("hidden"),r=!0},2e3)}function o(n){"down"==n&&r&&i()}function i(){r=!1,n()}function t(n,e){for(var o=0,i=n.slice(Math.max(n.length-e,1)),t=0;t<i.length;t++)o+=i[t];return Math.ceil(o/e)}function a(n){var e=(new Date).getTime();n=window.event||n||n.originalEvent;var i=n.wheelDelta||-n.deltaY||-n.detail,a=Math.max(-1,Math.min(1,i));l.length>149&&l.shift(),l.push(Math.abs(i));var r=e-d;d=e,r>200&&(l=[]);var s=t(l,10),w=t(l,70),h=s>=w;return h&&window.outerWidth>=1024&&o(a<0?"down":"down"),!1}$(window).on("beforeunload",function(){$(window).scrollTop(0)});var d=(navigator.userAgent.match(/(iPhone|iPod|iPad|Android|playbook|silk|BlackBerry|BB10|Windows Phone|Tizen|Bada|webOS|IEMobile|Opera Mini)/),(new Date).getTime()),l=[],r=!0,s=$("#main-container .section"),w=$(".typing-bubble"),h=s.length,u=1;window.outerWidth>=1024&&$(window).on("mousewheel",a)}();

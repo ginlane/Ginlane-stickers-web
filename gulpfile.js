@@ -11,8 +11,8 @@ var buffer = require('vinyl-buffer');
 var rollup = require('rollup');
 var rollupUglify = require('rollup-plugin-uglify');
 var gulpif = require('gulp-if');
-
-var isRelease = false;
+var rollupBabel  = require('rollup-plugin-babel');
+var isRelease = true;
 
 gulp.task('setIsRelease', function() {
   isRelease = true;
@@ -23,7 +23,9 @@ gulp.task('rollup', function() {
   rollup.rollup({
     entry: './js/main.rollup.js',
     plugins: [
-      gulpif(isRelease, rollupUglify())
+      rollupBabel(),
+      gulpif(isRelease, rollupUglify()),
+
     ]
   })
   .then( function ( bundle ) {
